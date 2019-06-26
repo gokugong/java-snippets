@@ -39,7 +39,8 @@ repositories {
 }
 
 dependencies {
-    compile "org.springframework.boot:spring-boot-starter-web: 2.0.6.RELEASE"
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    compile 'org.springframework.boot:spring-boot-starter-web:2.1.0.RELEASE'
     compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
