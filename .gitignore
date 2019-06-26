@@ -1,0 +1,21 @@
+# eclipselink jpa file
+output.log
+
+# eclipse files
+.settings
+.project
+.classpath
+.springBeans
+
+#ideaJ files
+.idea
+.iml
+
+# Gradle temp files
+.gradle
+
+# Gradle build folder
+build
+
+# Eclipse output folder
+bin

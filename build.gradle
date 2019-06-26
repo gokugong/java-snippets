@@ -1,0 +1,60 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.5.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+//apply plugin: 'org.springframework.boot'
+//apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = 1.8
+
+sourceSets {
+    main {
+        resources {
+            srcDirs "src/main/resources", "src/main/configs"
+        }
+    }
+}
+
+repositories {
+    google()
+    jcenter()
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web: 2.0.6.RELEASE"
+    compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.apache.commons:commons-lang3:3.6'
+    compile 'com.netflix.feign:feign-jackson:8.18.0'
+    compile 'org.springframework.boot:spring-boot-starter-cache:2.0.6.RELEASE'
+    compile 'org.springframework.cloud:spring-cloud-netflix-core:2.0.1.RELEASE'
+    compile 'org.springframework:spring-web:4.3.7.RELEASE'
+    compile "org.mvel:mvel2:2.3.1.Final"
+    compile 'com.fasterxml.jackson.core:jackson-core:2.9.7'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.7'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.7'
+    compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.9.7'
+    compile 'com.google.guava:guava:27.1-jre'
+    compile("io.reactivex:rxjava:1.1.10")
+    compile 'org.apache.camel:camel-rabbitmq:2.20.1'
+    compile 'com.rabbitmq:http-client:3.2.0.RELEASE'
+}

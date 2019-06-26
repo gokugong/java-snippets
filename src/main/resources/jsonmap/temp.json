@@ -1,0 +1,23 @@
+ItemAttributesValidationRequestDTO {
+  AsnExists (boolean): ASN exists ,
+  AsnId (string): ASN Id ,
+  Asnlevel (string): ASN level ,
+  ItemAddMode (boolean): Item add mode ,
+  ItemDTO (ItemDTO): ItemDTO ,
+  LpnId (string): LPN Id ,
+  ReceivingCriteriaId (string): Receiving Criteria Id ,
+  ReceivingLineOverrideCriteriaId (string, optional),
+  ReceivingOverrideCriteriaId (string, optional)
+}
+ItemDTO {
+  BatchNumber (string, optional),
+  CountryOfOrigin (string, optional),
+  InventoryAttribute1 (string, optional),
+  InventoryAttribute2 (string, optional),
+  InventoryAttribute3 (string, optional),
+  InventoryAttribute4 (string, optional),
+  InventoryAttribute5 (string, optional),
+  InventoryTypeId (string, optional),
+  ItemId (string, optional),
+  ProductStatusId (string, optional)
+}
