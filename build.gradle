@@ -2,13 +2,20 @@ buildscript {
     ext {
         springBootVersion = '2.0.5.RELEASE'
     }
-    repositories {
-        mavenCentral()
-        google()
-        jcenter()
-    }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+
+allprojects {
+    group = "goku.java-snippets"
+    repositories {
+        jcenter()
+        mavenCentral()
     }
 }
 
@@ -16,6 +23,7 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'idea'
 //apply plugin: 'org.springframework.boot'
 //apply plugin: 'io.spring.dependency-management'
 
@@ -32,14 +40,15 @@ sourceSets {
 repositories {
     google()
     jcenter()
-    mavenLocal()
+    //mavenLocal()
     mavenCentral()
-    maven { url "https://repo.spring.io/snapshot" }
-    maven { url "https://repo.spring.io/milestone" }
+    //maven { url "https://repo.spring.io/snapshot" }
+    //maven { url "https://repo.spring.io/milestone" }
 }
 
 dependencies {
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'org.springframework.boot:spring-boot-starter-web:2.1.0.RELEASE'
     compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
 
@@ -58,4 +67,10 @@ dependencies {
     compile("io.reactivex:rxjava:1.1.10")
     compile 'org.apache.camel:camel-rabbitmq:2.20.1'
     compile 'com.rabbitmq:http-client:3.2.0.RELEASE'
+    compile 'net.sf.supercsv:super-csv:2.4.0'
+    compile 'org.slf4j:slf4j-api:1.7.25'
+    compile 'org.slf4j:slf4j-log4j12:1.7.25'
+    compile 'commons-logging:commons-logging:1.2'
+    compile 'commons-codec:commons-codec:1.9'
+    compile 'com.microsoft.sqlserver:sqljdbc42:6.0.8112'
 }

@@ -1,5 +1,7 @@
 package misc;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -65,5 +67,11 @@ public class MiscTestBed
         logger.debug("min = {}", min);
         logger.debug("sum = {}", sum);
         logger.debug("sum2 = {}", values.stream().mapToInt(Integer::intValue).sum());
+
+        logger.debug("Integer.max={}, min={}", Integer.MAX_VALUE, Integer.MIN_VALUE);
+        int[] intArray = {0, 1, -1, Integer.MIN_VALUE, Integer.MAX_VALUE, 100};
+        Arrays.sort(intArray);
+        logger.debug("Sorted int array = {}", Arrays.toString(intArray));
     }
 }
+

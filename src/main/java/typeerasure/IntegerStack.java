@@ -21,6 +21,10 @@ public class IntegerStack extends Stack<Integer>
 
     public static void main(String[] args)
     {
+        Stack stackDummy = new Stack();
+        stackDummy.push(new Integer(1));
+        stackDummy.push("string");
+        logger.debug("stack lat element: {}", stackDummy.pop());
         Stack stack = new IntegerStack();
         // Got Exception: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
         stack.push("string");

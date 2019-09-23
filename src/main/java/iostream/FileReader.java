@@ -2,9 +2,7 @@ package iostream;
 
 import java.io.BufferedReader;
 import java.io.Closeable;
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -13,7 +11,7 @@ import java.util.stream.Stream;
 
 public class FileReader
 {
-    static final String fileName = "src/main/resources/samples/sampleData.txt";
+    static final String fileName = "/Users/guohui/GitHub/java-snippets/linked-dir/test.txt"; //"src/main/resources/samples/sampleData.txt";
 
     private static void close(final Closeable os)
     {
